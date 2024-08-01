@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+:root{
+    --color-background: #1a1a1a; /* Fondo gris oscuro */
+    --color-background-header: #232323;
+    --color-primario: #2c2c2c; /* Gris oscuro para áreas principales de texto */
+    --color-secundario: #3a3a3a; /* Gris medio oscuro para áreas secundarias de texto */
+    --color-texto: #ffffff; /* Blanco para el texto */
+    --color-boton: #4a4a4a; /* Gris para botones */
+    --color-boton-hover: #5a5a5a; /* Gris más claro para el estado hover de los botones */
+    --fuente: "Montserrat", sans-serif; /* Una fuente moderna y legible */
+
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    padding: 15px;
+    background-color: var(--color-background-header);
+    color: var(--color-texto);
+}
+.main {
+    height: 100vh;
+    display: flex;
+    background-color: var(--color-background);
+    flex-direction: row;
+    padding: 20px;
+    gap: 2px;
+    justify-content: center;
+    align-items: stretch;
+    
+}
+.main__container__encriptador{
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 15px;
+    background-color: var(--color-primario);
+    width: 80%;
+    height: 100%;
+    gap: 10px;
+}
+.encriptador__texto{
+    text-decoration: none;
+    resize: none;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-primario);
+    border: none;
+    font-size: 1.5rem;
+    color: var(--color-texto);
+}
+.encriptador__texto:focus{
+    outline: none;
+}
+.encriptador__leyenda{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 5px;
+}
+.encriptador__leyenda__texto{
+    color: var(--color-texto);
+    font-family: var(--fuente);
+    font-size: 0.8rem;
+    text-align: center;
+}
+.encriptador__leyenda__icono {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23000' d='M2.93 17.07A10 10 0 1 1 17.07 2.93A10 10 0 0 1 2.93 17.07M9 5v6h2V5zm0 8v2h2v-2z'/%3E%3C/svg%3E");
+    background-color: var(--color-boton);
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+.encriptador__opciones{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    font-size: 1.5rem;
+    
+}
+.encriptador__opciones__encriptar{
+    width: 180px;
+    height: 30px;
+    border-radius: 24px;
+    background-color: var(--color-boton);
+    color: var(--color-texto);
+}
+.encriptador__opciones__encriptar:hover{
+    background-color: var(--color-boton-hover);
+}
+.encriptador__opciones__desencriptar{
+    width: 180px;
+    height: 30px;
+    border-radius: 24px;
+    background-color: var(--color-boton);
+    color: var(--color-texto);
+}
+.encriptador__opciones__desencriptar:hover{
+    background-color: var(--color-boton-hover);
+}
+.main__container__resultado{
+    display: flex;
+    flex-direction: column;
+    resize: none;
+    width: auto;
+    height: 100%;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: var(--color-primario);
+    align-items: center;
+}
+.resultado__texto{
+    text-decoration: none;
+    resize: none;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-primario);
+    color: var(--color-texto);
+    border: none;
+    font-size: 1.5rem;
+}
+.resultado__copiar{
+    width: 180px;
+    height: 30px;
+    border-radius: 24px;
+    color: var(--color-texto);
+    background-color: var(--color-boton);
+}
+.resultado__texto:focus{
+    outline: none;
+}
+footer{
+    display: flex;
+    background-color: var(--color-background-header);
+    color: var(--color-texto);
+    font-family: var(--fuente);
+    padding: 15px;
+    justify-content: center;
+}
+@media (max-width: 1000px){
+    .main{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .main__container__encriptador{
+        width: 100%;
+    }
+}

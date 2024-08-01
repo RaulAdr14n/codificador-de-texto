@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css">
     <title>Codificador de Texto</title>
   </head>
   <body>
@@ -10,19 +11,22 @@
       <img src="" alt="logotipo de alura" />
     </header>
     <main class="main">
-      <section class="main__container encriptador">
+      <section class="main__container__encriptador">
         <textarea class="encriptador__texto" placeholder="Ingrese el texto aqui" name="texto a encriptar"></textarea>
-        <h4 class="encripador__leyenda">Solo se permite letras en minusculas, sin acento ni caracteres especiales</h4>
-        <section class="encriptador__opciones"> //Son dos botones para encriptar y desencriptar
+        <div class="encriptador__leyenda">
+          <p class="encriptador__leyenda__texto">Solo se permite letras en minusculas, sin acento ni caracteres especiales</p>
+          <span class="encriptador__leyenda__icono"></span>
+        </div>
+        <section class="encriptador__opciones">
           <button class="encriptador__opciones__encriptar">Encriptar</button>
           <button class="encriptador__opciones__desencriptar">Desencriptar</button>
         </section>
       </section>
-      <section class="main__container resultado">
+      <section class="main__container__resultado">
         <textarea class="resultado__texto"></textarea>
         <button class="resultado__copiar">Copiar</button>
       </section>
     </main>
-    <footer></footer>
+    <footer>Desarollado por Raul hernandez</footer>
   </body>
 </html>
