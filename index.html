@@ -8,25 +8,27 @@
   </head>
   <body>
     <header>
-      <img src="" alt="logotipo de alura" />
+      <img src="/img/Vectora.png" alt="logotipo de alura" />
     </header>
     <main class="main">
       <section class="main__container__encriptador">
         <textarea class="encriptador__texto" placeholder="Ingrese el texto aqui" name="texto a encriptar"></textarea>
         <div class="encriptador__leyenda">
-          <p class="encriptador__leyenda__texto">Solo se permite letras en minusculas, sin acento ni caracteres especiales</p>
+          <p class="encriptador__leyenda__texto">Solo letras minusculas y sin acentos</p>
           <span class="encriptador__leyenda__icono"></span>
         </div>
         <section class="encriptador__opciones">
-          <button class="encriptador__opciones__encriptar">Encriptar</button>
-          <button class="encriptador__opciones__desencriptar">Desencriptar</button>
+          <button class="encriptador__opciones__encriptar" disabled>Encriptar</button>
+          <button class="encriptador__opciones__desencriptar" disabled>Desencriptar</button>
         </section>
       </section>
       <section class="main__container__resultado">
-        <textarea class="resultado__texto"></textarea>
-        <button class="resultado__copiar">Copiar</button>
+        <textarea class="resultado__texto" readonly></textarea>
+        <button class="resultado__copiar" disabled>Copiar</button>
+        <div id="notificacion">¡Copiado en portapapeles!</div>
       </section>
     </main>
-    <footer>Desarollado por Raul hernandez</footer>
+    <script src="app.js"></script>
+    <footer>Desarollado por Raul hernandez - 2024</footer>
   </body>
 </html>
