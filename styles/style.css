@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-:root{
+
+/* Variables globales */
+:root {
     --color-background: #1a1a1a; /* Fondo gris oscuro */
     --color-background-header: #232323;
     --color-primario: #2c2c2c; /* Gris oscuro para áreas principales de texto */
@@ -8,18 +10,28 @@
     --color-boton: #4a4a4a; /* Gris para botones */
     --color-boton-hover: #5a5a5a; /* Gris más claro para el estado hover de los botones */
     --fuente: "Montserrat", sans-serif; /* Una fuente moderna y legible */
-
 }
+
+/* Reset de estilos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-header{
-    padding: 15px;
+
+/* Estilos para el header */
+.header {
+    padding: 6px;
     background-color: var(--color-background-header);
     color: var(--color-texto);
 }
+
+/* Estilos para el logo en el header */
+.header__logo {
+    max-width: 100%;
+}
+
+/* Estilos para el main */
 .main {
     height: 100vh;
     display: flex;
@@ -29,9 +41,10 @@ header{
     gap: 2px;
     justify-content: center;
     align-items: stretch;
-    
 }
-.main__container__encriptador{
+
+/* Estilos para el encriptador */
+.encriptador {
     display: flex;
     flex-direction: column;
     border-radius: 20px;
@@ -41,7 +54,8 @@ header{
     height: 100%;
     gap: 10px;
 }
-.encriptador__texto{
+
+.encriptador__texto {
     text-decoration: none;
     resize: none;
     width: 100%;
@@ -51,22 +65,26 @@ header{
     font-size: 1.5rem;
     color: var(--color-texto);
 }
-.encriptador__texto:focus{
+
+.encriptador__texto:focus {
     outline: none;
 }
-.encriptador__leyenda{
+
+.encriptador__leyenda {
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
     gap: 5px;
 }
-.encriptador__leyenda__texto{
+
+.encriptador__leyenda-texto {
     color: var(--color-texto);
     font-family: var(--fuente);
     font-size: 0.8rem;
     text-align: center;
 }
-.encriptador__leyenda__icono {
+
+.encriptador__leyenda-icono {
     display: inline-block;
     width: 1em;
     height: 1em;
@@ -79,44 +97,43 @@ header{
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
 }
-.encriptador__opciones{
+
+.encriptador__opciones {
     display: flex;
     justify-content: center;
     gap: 50px;
     font-size: 1.5rem;
-    
 }
-.encriptador__opciones__encriptar{
+
+.encriptador__boton {
     width: 180px;
     height: 30px;
     border-radius: 24px;
     background-color: var(--color-boton);
     color: var(--color-texto);
+    cursor: pointer;
 }
-.encriptador__opciones__encriptar:hover{
+
+.encriptador__boton:hover {
     background-color: var(--color-boton-hover);
 }
-.encriptador__opciones__encriptar:disabled{
+
+.encriptador__boton:disabled {
     opacity: 0.5;
     cursor: not-allowed;
-    pointer-events: none; 
+    pointer-events: none;
 }
-.encriptador__opciones__desencriptar{
-    width: 180px;
-    height: 30px;
-    border-radius: 24px;
-    background-color: var(--color-boton);
-    color: var(--color-texto);
+
+.encriptador__boton--encriptar {
+    /* Modificador para el botón de encriptar */
 }
-.encriptador__opciones__desencriptar:hover{
-    background-color: var(--color-boton-hover);
+
+.encriptador__boton--desencriptar {
+    /* Modificador para el botón de desencriptar */
 }
-.encriptador__opciones__desencriptar:disabled{
-    opacity: 0.5;
-    cursor: not-allowed;
-    pointer-events: none; 
-}
-.main__container__resultado{
+
+/* Estilos para el resultado */
+.resultado {
     display: flex;
     flex-direction: column;
     resize: none;
@@ -127,7 +144,8 @@ header{
     background-color: var(--color-primario);
     align-items: center;
 }
-.resultado__texto{
+
+.resultado__texto {
     text-decoration: none;
     resize: none;
     width: 100%;
@@ -137,41 +155,35 @@ header{
     border: none;
     font-size: 1.5rem;
 }
-.resultado__copiar{
+
+.resultado__texto:focus {
+    outline: none;
+}
+
+.resultado__boton {
     width: 180px;
     height: 30px;
     border-radius: 24px;
     color: var(--color-texto);
     background-color: var(--color-boton);
+    cursor: pointer;
 }
-.resultado__copiar:hover{
+
+.resultado__boton:hover {
     background-color: var(--color-boton-hover);
 }
-.resultado__copiar:disabled{
+
+.resultado__boton:disabled {
     opacity: 0.5;
     cursor: not-allowed;
-    pointer-events: none; 
+    pointer-events: none;
 }
-.resultado__texto:focus{
-    outline: none;
+
+.resultado__boton--copiar {
+    /* Modificador para el botón de copiar */
 }
-footer{
-    display: flex;
-    background-color: var(--color-background-header);
-    color: var(--color-texto);
-    font-family: var(--fuente);
-    padding: 15px;
-    justify-content: center;
-}
-@media (max-width: 1000px){
-    .main{
-        flex-direction: column;
-        gap: 10px;
-    }
-    .main__container__encriptador{
-        width: 100%;
-    }
-}
+
+/* Estilos para la notificación */
 #notificacion {
     visibility: hidden;
     min-width: 120px;
@@ -187,11 +199,36 @@ footer{
     transform: translateX(-50%);
     font-size: 14px;
 }
+
 #notificacion.mostrar {
     visibility: visible;
     animation: fadeout 2s ease-out;
 }
+
+/* Animación para la notificación */
 @keyframes fadeout {
-    from {opacity: 1;}
-    to {opacity: 0;}
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* Estilos para el footer */
+.footer {
+    display: flex;
+    background-color: var(--color-background-header);
+    color: var(--color-texto);
+    font-family: var(--fuente);
+    padding: 15px;
+    justify-content: center;
+}
+
+/* Media Queries */
+@media (max-width: 1000px) {
+    .main {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .encriptador {
+        width: 100%;
+    }
 }
