@@ -1,8 +1,9 @@
-let textoInput = document.getElementsByClassName('encriptador__texto')[0];
-let botonEncriptar = document.getElementsByClassName('encriptador__opciones__encriptar')[0];
-let botonDesencriptar = document.getElementsByClassName('encriptador__opciones__desencriptar')[0];
-let textoOutput = document.getElementsByClassName('resultado__texto')[0];
-let botonCopiar = document.getElementsByClassName('resultado__copiar')[0];
+let textoInput = document.querySelector('.encriptador__texto');
+let botonEncriptar = document.querySelector('.encriptador__boton--encriptar');
+let botonDesencriptar = document.querySelector('.encriptador__boton--desencriptar');
+let textoOutput = document.querySelector('.resultado__texto');
+let botonCopiar = document.querySelector('.resultado__boton--copiar');
+
 
 botonEncriptar.addEventListener('click', encriptar);
 botonDesencriptar.addEventListener('click', desencriptar);
@@ -90,9 +91,10 @@ function copiar(){
     mostrarPopup();
 }
 function mostrarPopup() {
-    let popup = document.getElementById("notificacion");
+    let popup = document.getElementById('notificacion');
     popup.classList.add("mostrar");
     setTimeout(() => {
-        popup.classList.remove("mostrar");
+       popup.classList.remove("mostrar");
     }, 2000);
+
 }
