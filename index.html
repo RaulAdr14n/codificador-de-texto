@@ -7,28 +7,28 @@
     <title>Codificador de Texto</title>
   </head>
   <body>
-    <header>
-      <img src="/img/Vectora.png" alt="logotipo de alura" />
+    <header class="header">
+      <img class="header__logo" src="/img/Vectora.png" alt="logotipo de alura" />
     </header>
     <main class="main">
-      <section class="main__container__encriptador">
-        <textarea class="encriptador__texto" placeholder="Ingrese el texto aqui" name="texto a encriptar"></textarea>
+      <section class="encriptador">
+        <textarea class="encriptador__texto" placeholder="Ingrese el texto aqui" name="texto-a-encriptar"></textarea>
         <div class="encriptador__leyenda">
-          <p class="encriptador__leyenda__texto">Solo letras minusculas y sin acentos</p>
-          <span class="encriptador__leyenda__icono"></span>
+          <p class="encriptador__leyenda-texto">Solo letras minúsculas y sin acentos</p>
+          <span class="encriptador__leyenda-icono"></span>
         </div>
-        <section class="encriptador__opciones">
-          <button class="encriptador__opciones__encriptar" disabled>Encriptar</button>
-          <button class="encriptador__opciones__desencriptar" disabled>Desencriptar</button>
-        </section>
+        <div class="encriptador__opciones">
+          <button class="encriptador__boton encriptador__boton--encriptar" disabled>Encriptar</button>
+          <button class="encriptador__boton encriptador__boton--desencriptar" disabled>Desencriptar</button>
+        </div>
       </section>
-      <section class="main__container__resultado">
+      <section class="resultado">
         <textarea class="resultado__texto" readonly></textarea>
-        <button class="resultado__copiar" disabled>Copiar</button>
-        <div id="notificacion">¡Copiado en portapapeles!</div>
+        <button class="resultado__boton resultado__boton--copiar" disabled>Copiar</button>
+        <div class="resultado__notificacion" id="notificacion">¡Copiado en portapapeles!</div>
       </section>
     </main>
     <script src="app.js"></script>
-    <footer>Desarollado por Raul hernandez - 2024</footer>
+    <footer class="footer">Desarrollado por Raúl Hernández - 2024</footer>
   </body>
 </html>
